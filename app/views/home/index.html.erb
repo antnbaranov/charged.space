@@ -1,16 +1,19 @@
-<div class="container">
+<div class="container" >
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-6">
      <div class="p-5">
      <div class="card">
        <div class="card-body">
-       <%= form_with model: @link, remote: true do |form| %>
-           <h4 class='card-title'> Введите ссылку для сокращения </h4>
-           <%= form.text_field :og_url, class: "form-control", placeholder: "сокращаем до 8 знаков" %>
+           <%= form_with model: @link, remote: true do |form| %>
+           <h4 align="center" class='card-title'> Введите ссылку для сокращения: </h4>
+           <%= form.text_field :og_url, class: "form-control", placeholder: "сокращаем до 5 знаков" %>
            <%= form.submit "Сокращаем!", class: "btn btn-primary mt-2" %>
            <% end %>
-         </div>
-         <div id="short-link">
-         </div>
        </div>
-      </div>
      </div>
+       <div id="short-link">
+       </div>
+     </div>
+</div>
+  </div>
 </div>
