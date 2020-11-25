@@ -1,0 +1,12 @@
+//var lookupCode = "<%= @link.lookup_code %>";
+//console.log(lookupCode);
+
+//var element = document.getElementById('short-link');
+//element.innerHTML = lookupCode;
+
+
+var element = document.getElementById('short-link');
+
+var html = "<%= j render 'link', link: @link.shortened_url %>";
+
+element.innerHTML = html;
