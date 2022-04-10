@@ -4,13 +4,13 @@ RSpec.describe Link, type: :model do
 
   it "valid og url + lookup code" do
     link = Link.new(
-    og_url: "https://online.sochisirius.ru/", lookup_code: "12345678")
+    og_url: "https://online.sochisirius.ru/", lookup_code: "11")
     expect(link.valid?).to be(true)
   end
 
   it "is invalid if url is not formatted properly" do
     link = Link.new(
-        og_url: "hgfdrftyuio", lookup_code: "12345678")
+        og_url: "hgfdrftyuio", lookup_code: "11")
     expect(link.valid?).to be(false)
   end
 
@@ -21,13 +21,19 @@ RSpec.describe Link, type: :model do
   end
 
   it "invalid does not have a OG url" do
-    link = Link.new( lookup_code: "12345678")
+    link = Link.new( lookup_code: "11")
     expect(link.valid?).to be(false)
   end
 
   it "is invalid lookup code already exist" do
     link = Link.new( og_url: "https://online.sochisirius.ru/",
-                     lookup_code: "12345678")
+                     lookup_code: "11")
+    link.save
+
+    link_2 = Link.new( og_url: "https://google.com",
+                     lookup_code: "11")
+
+    expect(link_2.valid?).to be(false)
   end
 
 

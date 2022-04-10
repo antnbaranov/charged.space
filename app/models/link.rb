@@ -11,7 +11,10 @@ class Link < ApplicationRecord
   end
 
   def shortened_url
-    "http://charged.space/#{lookup_code}"
+    #Production MODE
+    # "charged.space/#{lookup_code}"
+    #Development MODE
+    "http://localhost:3000/#{lookup_code}"
   end
 end
 
