@@ -23,7 +23,7 @@ class Shortener
   private
 
   def get_fresh_code
-    SecureRandom.uuid[0..4]
+    Random.rand(0.100)
   end
 
 end

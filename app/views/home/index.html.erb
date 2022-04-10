@@ -1,21 +1,28 @@
-<div class="container" >
-  <div class="row d-flex justify-content-center">
-    <div class="col-12 col-md-6">
-      <div align="center">
-     <div class="p-5">
-     <div class="card">
-       <div class="card-body">
-           <%= form_with model: @link, remote: true do |form| %>
-           <h4 align="center" class='card-title'> Введите ссылку для сокращения: </h4>
-           <%= form.text_field :og_url, class: "form-control", placeholder: "сокращаем до 5 знаков" %>
-           <%= form.submit "Сокращаем!", class: "btn btn-primary mt-2" %>
-           <% end %>
-       </div>
-     </div>
-       <div id="short-link">
-       </div>
-     </div>
-</div>
+<div class="bg">
+  <div class="burberry">
+    <div class="container" >
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-6">
+          <div align="center">
+            <div class="p-5">
+              <h1>Link shortener, not for everyone</h1>
+              <div class="card">
+                <div class="card-body shit">
+                  <%= form_with model: @link, remote: true do |form| %>
+                    <%= form_tag(pay_path, method: :get) do %>
+                      <h4 align="center" class='card-title '> Enter the link for the cutting: </h4>
+                      <%= form.text_field :og_url, class: "form-control", placeholder: "links" %>
+                      <%= form.submit  "Shorten!",  class: "btn btn-success mt-2" %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div id="short-link">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>

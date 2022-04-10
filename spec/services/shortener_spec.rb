@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Shortener do
 
-  it 'give URL 8 char' do
+  it 'give URL 1 char' do
     url = "https://google.com"
     shortener = Shortener.new(url)
-    expect(shortener.lookup_code.length).to eq(8)
+    expect(shortener.lookup_code.length).to eq(2)
   end
 
-  it 'give each URL 8 char' do
+  it 'give each URL 2 char' do
     url = "https://google.com"
     shortener = Shortener.new(url)
     code_A1 = shortener.lookup_code
