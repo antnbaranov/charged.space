@@ -23,7 +23,7 @@ class Shortener
   private
 
   def get_fresh_code
-    Random.rand(0.100)
+    Random.rand(1...100)
   end
 
 end
